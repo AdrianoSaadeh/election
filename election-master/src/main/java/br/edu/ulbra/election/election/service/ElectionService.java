@@ -102,12 +102,47 @@ public class ElectionService {
 	private void validateInput(ElectionInput input) {
 		if (input.getYear() != null && input.getYear() < 0)
 			throw new GenericOutputException("Invalid year");
+		
+		//valida ano de 2000 até 2200
+		if (input.getYear() < 2000 || input.getYear() > 2200)
+			throw new GenericOutputException("Invalid year");
 
 		if (input.getStateCode() != null && input.getStateCode().length() != 2)
 			throw new GenericOutputException("Invalid statecode");
-
-		if (input.getDescription() != null && input.getDescription().isEmpty())
-			throw new GenericOutputException("Should provide a description");
+		
+		//valida estados do BR
+		if (input.getStateCode() != "AC" || 
+			input.getStateCode() != "AL" || 
+			input.getStateCode() != "AP" || 
+			input.getStateCode() != "AM" || 
+			input.getStateCode() != "BA" || 
+			input.getStateCode() != "CE" || 
+			input.getStateCode() != "DF" || 
+			input.getStateCode() != "ES" || 
+			input.getStateCode() != "GO" || 
+			input.getStateCode() != "MA" || 
+			input.getStateCode() != "MT" || 
+			input.getStateCode() != "MS" || 
+			input.getStateCode() != "MG" || 
+			input.getStateCode() != "PA" || 
+			input.getStateCode() != "PB" || 
+			input.getStateCode() != "PR" || 
+			input.getStateCode() != "PE" || 
+			input.getStateCode() != "PI" || 
+			input.getStateCode() != "RJ" || 
+			input.getStateCode() != "RN" || 
+			input.getStateCode() != "RS" || 
+			input.getStateCode() != "RO" || 
+			input.getStateCode() != "RR" || 
+			input.getStateCode() != "SC" || 
+			input.getStateCode() != "SP" || 
+			input.getStateCode() != "SE" || 
+			input.getStateCode() != "TO")
+			throw new GenericOutputException("Invalid statecode");	
+		
+		//ajuste para validar descrição maior do que 5 caracteres
+		if (input.getDescription() != null && input.getDescription().isEmpty() && input.getDescription().length() < 5)
+			throw new GenericOutputException("Should provide a description greater than 5 characters");
 	}
 
 }
