@@ -1,12 +1,13 @@
-package br.edu.ulbra.election.election.input.v1;
+package br.edu.ulbra.election.election.output.v1;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-@ApiModel(description = "Election Input Information")
-public class VoteInput {
-
-    @ApiModelProperty(example = "1", notes = "Election Unique Identification")
+@ApiModel(description = "Vote Output Information")
+public class VoteOutput {
+	@ApiModelProperty(example = "1", notes = "Vote Unique Identification")
+    private Long id;
+	@ApiModelProperty(example = "1", notes = "Election Unique Identification")
     private Long electionId;
     @ApiModelProperty(example = "2", notes = "Voter Unique Identifier")
     private Long voterId;
@@ -36,4 +37,12 @@ public class VoteInput {
     public void setCandidateNumber(Long candidateNumber) {
         this.candidateNumber = candidateNumber;
     }
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 }
