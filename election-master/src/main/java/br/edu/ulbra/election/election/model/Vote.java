@@ -71,6 +71,5 @@ public class Vote {
     public void setElection(Election election) {
         this.election = election;
     }
-
 		
 }

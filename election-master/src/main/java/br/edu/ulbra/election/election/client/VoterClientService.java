@@ -29,4 +29,3 @@ public class VoterClientService {
 		VoterOutput getById(@PathVariable(name = "voterId") Long voterId);
 	}
 }
-
