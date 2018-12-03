@@ -37,3 +37,9 @@ info:
 url:
   candidate-service: 'http://localhost:8082'
   voter-service: 'http://localhost:8081'
+  
+  election-service: 'http://localhost:8084'
+  login-service: 'http://localhost:8081'
+  party-service: 'http://localhost:8083'
+
+  
